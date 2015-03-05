@@ -1,0 +1,35 @@
+.left {
+	height:100%;
+	background-image:url(/squared_metal.png);
+}
+.right {
+	height:100%;
+	background-color:gray;
+	padding-left:0px;
+	padding-right:0px;
+	padding-top:20px;
+	background-image:url(tree_bark.png);
+}
+
+.right div {
+	/*border-left:1px dashed gray;*/
+	text-align:center;
+
+	/*background-color:white;*/
+}
+.results {
+	margin-top:20px;
+}
+.results div {
+	border-left:1px dashed gray;
+	padding-left:0;
+	padding-right:0;
+	background-color:white;
+}
+.results div:first-child{
+	border-left:none;
+}
+.search {
+	padding-left:0;
+	padding-right:0;
+}
