@@ -5,10 +5,7 @@ var app = express()
 // app.get('/', function (req, res) {
 //   res.send('Hello World!')
 // });
-app.get('*', function (req, res) {
-  res.sendFile('./public/index.html', {"root": __dirname}); // load our public/index.html file
-  // res.send('test');
-});
+
 
 // app.get('/', function (req, res) {
 //   res.send('wut wut');
@@ -31,6 +28,11 @@ app.get('/summoner', function (req, res) {
         res.send(body);
       }
   })
+});
+
+app.get('*', function (req, res) {
+  res.sendFile('./public/index.html', {"root": __dirname}); // load our public/index.html file
+  // res.send('test');
 });
 
 
