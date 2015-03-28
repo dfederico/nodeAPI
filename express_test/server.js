@@ -1,5 +1,6 @@
 var express = require('express')
 var request = require('request')
+var path = require('path')
 var app = express()
 
 // app.get('/', function (req, res) {
@@ -59,6 +60,8 @@ app.get('/summoner', function (req, res) {
       }
   })
 });
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('*', function (req, res) {
   res.sendFile('./public/index.html', {"root": __dirname}); // load our public/index.html file
