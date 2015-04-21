@@ -36,7 +36,7 @@ app.get('/bummoner/:id', function (req, res) {
             break;
           }
         }
-        console.log(data['id']);
+        // console.log(data['id']);
         var summId = data['id'];
         // var req2string = 'https://na.api.pvp.net/api/lol/na/v2.2/matchhistory/' + 36882426 + '?api_key=33ddb3c0-b554-4c7e-a274-fbf483eb2afb';
         var req2string = 'https://na.api.pvp.net/api/lol/na/v2.2/matchhistory/' + summId + '?api_key=33ddb3c0-b554-4c7e-a274-fbf483eb2afb';
