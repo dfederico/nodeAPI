@@ -15,16 +15,16 @@ html, body {
 }
 .left {
 	height:100%;
-	min-height:150px;
-	background-image:url(squared_metal.png);
+	/*min-height:150px;*/
+	/*background-image:url(squared_metal.png);*/
 }
 .right {
 	height:100%;
-	background-color:gray;
+	/*background-color:gray;*/
 	padding-left:0px;
 	padding-right:0px;
 	padding-top:20px;
-	background-image:url(tree_bark.png);
+	/*background-image:url(tree_bark.png);*/
 }
 
 .right div {
@@ -48,4 +48,11 @@ html, body {
 .search {
 	padding-left:0;
 	padding-right:0;
+}
+.new-row {
+	text-align:left;
+	border:1px solid gray;
+	padding-top:5px;
+	padding-bottom:5px;
+	font-family:Arial;
 }

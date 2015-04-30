@@ -15,7 +15,7 @@
 	<div class="container-fluid" id="main">
 		<div class="row">
 			<div class="col-md-3 left">test</div>
-			<div class="col-md-9 right" ng-controller="BasicCtrl1">
+			<div class="col-md-9 right" ng-controller="BasicCtrl1" ng-init="init()">
 				<div class="col-md-8 col-md-offset-2 search">
 					<div class="input-group">
 						<input type="text" class="form-control" placeholder="Summoner ID..." ng-model="summoner">
@@ -27,9 +27,8 @@
 						</span>
 					</div>
 				</div>
-				<div class="col-md-12 results">
+<!-- 				<div class="col-md-12 results">
 					<div class="col-md-2 col-md-offset-2">
-						<!-- <img alt="placeholder"> -->
 						<h5>Champion</h5>
 					</div>
 					<div class="col-md-2">
@@ -55,6 +54,16 @@
 					<div class="col-md-2">
 						<span>{{game.participants[0].stats.deaths}}</span>
 					</div>
+				</div> -->
+
+
+
+				<div class="col-md-12 new-row" ng-repeat="game in games">
+					<span>Champ: {{game.participants[0].championId}}</span>
+					<span>Kills: {{game.participants[0].stats.kills}}</span>
+					<span>Assists: {{game.participants[0].stats.assists}}</span>
+					<span>Deaths: {{game.participants[0].stats.deaths}}</span>
+					<span>KDA: {{ (game.participants[0].stats.kills + game.participants[0].stats.assists ) / game.participants[0].stats.deaths}}</span>
 				</div>
 			</div>
 		</div>
