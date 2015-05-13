@@ -60,7 +60,8 @@
 
 
 				<div class="col-md-12 new-row" ng-repeat="game in games">
-					<span>Champ: {{game.participants[0].championId}}</span>
+					<!-- <span>Champ: {{game.participants[0].championId}}</span> -->
+					<span>Champ: {{champSort(game.participants[0].championId)}}</span>
 					<span>Kills: {{game.participants[0].stats.kills}}</span>
 					<span>Assists: {{game.participants[0].stats.assists}}</span>
 					<span>Deaths: {{game.participants[0].stats.deaths}}</span>
