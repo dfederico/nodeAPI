@@ -3,7 +3,7 @@ html, body {
 }
 .page-wrap {
 	min-height:100%;
-	margin-bottom:-42px;
+	/*margin-bottom:-42px;*/
 }
 .page-wrap:after {
 /*  content: "";
@@ -11,7 +11,8 @@ html, body {
 }
 #site-footer {
 	height:42px;
-	background-color:orange;
+	/*background-color:orange;*/
+	background-color:#26a69a;
 }
 .left {
 	height:100%;
@@ -26,7 +27,14 @@ html, body {
 	padding-top:20px;
 	/*background-image:url(tree_bark.png);*/
 }
-
+.win-true {
+	/*background-color:green;*/
+	background-color:#66bb6a;
+}
+.win-false {
+	/*background-color:red;*/
+	background-color:#ef5350;
+}
 .right div {
 	/*border-left:1px dashed gray;*/
 	/*text-align:center;*/
@@ -51,8 +59,16 @@ html, body {
 }
 .new-row {
 	text-align:left;
-	border:1px solid gray;
+	/*border:1px solid gray;*/
 	padding-top:5px;
 	padding-bottom:5px;
 	font-family:Arial;
+	/*clear:both;*/
 }
+/*.card-title {
+	height:30px;
+}*/
+/*.card-content {
+	margin-top:0;
+	margin-bottom:0;
+}*/
