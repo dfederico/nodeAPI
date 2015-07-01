@@ -1,0 +1,34 @@
+<div ng-controller="BasicCtrl1" ng-init="init()">
+	<div class="input-group">
+		<input type="text" class="form-control" placeholder="Summoner ID..." ng-model="summoner">
+		<span class="input-group-btn">
+			<button class="btn btn-default" type="button" ng-click="hunt(summoner)" ng-submit="hunt(summoner)">
+				<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+				SEARCH
+			</button>
+		</span>
+	</div>
+
+	<div class="col s12 card">
+		<div class="card-content">
+			<div class="col-xs-2 col s2">Champ</div>
+			<div class="col-xs-1 col s1">Kills</div>
+			<div class="col-xs-1 col s1">Deaths</div>
+			<div class="col-xs-1 col s1">Assists</div>
+			<div class="col-xs-1 col s1">KDA</div>
+			<div class="col-xs-2 col s2">Date</div>
+			<div class="col-xs-2 col s2">Match Type</div>
+		</div>
+	</div>
+	<div ng-repeat="game in games | orderBy:'-matchCreation'" class="card col s12 win-{{game.participants[0].stats.winner}}">
+		<div class="card-content">
+			<div class="col-xs-2 col s2">{{champSort(game.participants[0].championId)}}</div>
+			<div class="col-xs-1 col s1">{{game.participants[0].stats.kills}}</div>
+			<div class="col-xs-1 col s1">{{game.participants[0].stats.deaths}}</div>
+			<div class="col-xs-1 col s1">{{game.participants[0].stats.assists}}</div>
+			<div class="col-xs-1 col s1">{{ kda(game.participants[0].stats.kills, game.participants[0].stats.deaths, game.participants[0].stats.assists)}}</div>
+			<div class="col-xs-2 col s2">{{daterater(game.matchCreation)}}</div>
+			<div class="col-xs-2 col s2">{{game.queueType}}</div>
+		</div>
+	</div>
+</div>
