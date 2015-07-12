@@ -14,6 +14,9 @@ html, body {
 	/*background-color:orange;*/
 	background-color:#26a69a;
 }
+.input-group {
+	margin-bottom:20px;
+}
 .left {
 	height:100%;
 	/*min-height:150px;*/
@@ -26,6 +29,18 @@ html, body {
 	padding-right:0px;
 	padding-top:20px;
 	/*background-image:url(tree_bark.png);*/
+}
+.loading-icon {
+	color:#26a69a;
+	font-size:146px;
+	margin-left:30%;
+	margin-top:15%;
+}
+.ico {
+	font-size:27px;
+	position:relative;
+	top:-3px;
+	color:black;
 }
 .win-true {
 	/*background-color:green;*/

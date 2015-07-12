@@ -5,7 +5,7 @@
 			<button class="btn btn-default" type="button" ng-click="hunt(summoner)" ng-submit="hunt(summoner)">
 				<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
 				SEARCH
-			</button>
+			</button>	
 		</span>
 	</div>
 
@@ -20,7 +20,10 @@
 			<div class="col-xs-2 col s2">Match Type</div>
 		</div>
 	</div>
-	<div ng-repeat="game in games | orderBy:'-matchCreation'" class="card col s12 win-{{game.participants[0].stats.winner}}">
+	<div ng-hide="loaded">
+		<i class="fa fa-cog fa-spin loading-icon"></i>
+	</div>
+	<div ng-show="loaded" ng-repeat="game in games | orderBy:'-matchCreation'" class="card col s12 win-{{game.participants[0].stats.winner}}">
 		<div class="card-content">
 			<div class="col-xs-2 col s2">{{champSort(game.participants[0].championId)}}</div>
 			<div class="col-xs-1 col s1">{{game.participants[0].stats.kills}}</div>
@@ -29,6 +32,7 @@
 			<div class="col-xs-1 col s1">{{ kda(game.participants[0].stats.kills, game.participants[0].stats.deaths, game.participants[0].stats.assists)}}</div>
 			<div class="col-xs-2 col s2">{{daterater(game.matchCreation)}}</div>
 			<div class="col-xs-2 col s2">{{game.queueType}}</div>
+			<div class="col-xs-2 col s2"><a href="#/match/{{game.matchId}}"><i class="ico material-icons">play_arrow</i></a></div>
 		</div>
 	</div>
 </div>

@@ -10,6 +10,10 @@ basic.config(['$routeProvider', function($routeProvider) {
 			templateUrl: '/partials/wards.html',
 			controller: 'BasicCtrl2'
 		}).
+		when('/match/:matchId', {
+			templateUrl: '/partials/match.html',
+			controller: 'BasicCtrl3'
+		}).
 		otherwise({
 			redirectTo: '/'
 		});
