@@ -3,7 +3,7 @@ html, body {
 }
 .page-wrap {
 	min-height:100%;
-	/*margin-bottom:-42px;*/
+	/*margin-bottom:-62px;*/
 }
 .page-wrap:after {
 /*  content: "";
@@ -14,7 +14,16 @@ html, body {
 	/*background-color:orange;*/
 	background-color:#26a69a;
 }
+.copyright {
+	color:white;
+	padding-left:20px;
+	padding-top:10px;
+}
 .input-group {
+	margin-bottom:20px;
+}
+.button-separator {
+	width:100%;
 	margin-bottom:20px;
 }
 .left {
@@ -49,6 +58,9 @@ html, body {
 .win-false {
 	/*background-color:red;*/
 	background-color:#ef5350;
+}
+.search-button {
+	color:black;
 }
 .right div {
 	/*border-left:1px dashed gray;*/

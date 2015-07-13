@@ -6,6 +6,10 @@ basic.config(['$routeProvider', function($routeProvider) {
 			templateUrl: '/partials/matchHistory.html',
 			controller: 'BasicCtrl1'
 		}).
+		when('/matchHistory/:summoner', {
+			templateUrl: '/partials/matchHistory.html',
+			controller: 'BasicCtrl1'
+		}).
 		when('/wards', {
 			templateUrl: '/partials/wards.html',
 			controller: 'BasicCtrl2'

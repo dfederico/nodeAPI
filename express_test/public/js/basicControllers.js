@@ -16,23 +16,11 @@ basicControllers.controller('BasicInit', function($scope, $http) {
 			});
 	}
 });
-basicControllers.controller('BasicCtrl1', function($scope, $http) {
+basicControllers.controller('BasicCtrl1', function($scope, $http, $routeParams) {
 	$scope.loaded = true;
-	// var champJSON = champListObj;
-	// var champJSON = '';
-	// var itemJSON = '';
-	// $scope.init = function() {
-	// 	// console.log('we init!');
-	// 	$http.get('/champlist').
-	// 		success(function (data, status, headers, config) {
-	// 			console.log(status + headers);
-	// 			champJSON = data.data;
-	// 			// var test = _.where(champJSON, 'id');
-	// 		}).
-	// 		error(function (data, status, headers, config) {
-	// 			console.log('champ data failed');
-	// 		});
-	// }
+	var summ = $routeParams.summoner;
+	routeHunt(summ);
+
 	$scope.champSort = function(champId) {
 		// var tempObject = _.where(champJSON, {id:champId});
 		var tempObject = _.where(champListObj, {id:champId});
@@ -56,7 +44,21 @@ basicControllers.controller('BasicCtrl1', function($scope, $http) {
 		retDate = date.toLocaleTimeString('en-us', options);
 		return retDate;
 	}
-
+	function routeHunt(summoner) {
+		// console.log(summ + " dannnnn");
+		$scope.loaded = false;
+		$http.get('/bummoner/' + summoner).
+		  success(function (data, status, headers, config) {
+		    $scope.loaded = true;
+		    console.log(data.matches);
+		    var holder = data.matches;
+		    $scope.games = holder;
+		    globalMatchHistory = data;
+		  }).
+		  error(function (data, status, headers, config) {
+		  	console.log('failed');
+		  });
+	} 
 	$scope.hunt = function(summoner) {
 		// console.log('hunt entered');
 		$scope.loaded = false;
