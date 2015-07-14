@@ -16,9 +16,9 @@ basicControllers.controller('BasicInit', function($scope, $http) {
 			});
 	}
 });
-basicControllers.controller('BasicCtrl1', function($scope, $http, $routeParams) {
+basicControllers.controller('BasicCtrl1', function($scope, $http, $stateParams) {
 	$scope.loaded = true;
-	var summ = $routeParams.summoner;
+	var summ = $stateParams.summoner;
 	routeHunt(summ);
 
 	$scope.champSort = function(champId) {
@@ -78,9 +78,9 @@ basicControllers.controller('BasicCtrl1', function($scope, $http, $routeParams) 
 basicControllers.controller('BasicCtrl2', function($scope, $http) {
 	$scope.hello = "gday m8";
 });
-basicControllers.controller('BasicCtrl3', function($scope, $http, $routeParams) {
-	$scope.matchId = $routeParams.matchId;
-	var mid = $routeParams.matchId
+basicControllers.controller('BasicCtrl3', function($scope, $http, $stateParams) {
+	$scope.matchId = $stateParams.matchId;
+	var mid = $stateParams.matchId
 	var match;
 	for (var i = 0; i < globalMatchHistory.matches.length; i++) {
 		if(globalMatchHistory.matches[i].matchId == mid) {

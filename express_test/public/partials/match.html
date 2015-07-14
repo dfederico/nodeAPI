@@ -1,7 +1,11 @@
 <div class="" ng-controller="BasicCtrl3">
-	
+	<a href="#/match/{{matchId}}/combat">combat</a>
+	<a href="#/match/{{matchId}}/spells">spells</a>
+	<a href="#/match/{{matchId}}/wards">wards</a>
 	<p>{{matchId}}</p>
 
 
 	<p>{{match.participants[0].stats.kills}}</p>
+	<div ui-view></div>
+
 </div>

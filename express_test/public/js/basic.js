@@ -1,24 +1,36 @@
-var basic = angular.module('basic', ['ngRoute', 'basicControllers']);
-
-basic.config(['$routeProvider', function($routeProvider) {
-	$routeProvider.
-		when('/matchHistory', {
-			templateUrl: '/partials/matchHistory.html',
-			controller: 'BasicCtrl1'
-		}).
-		when('/matchHistory/:summoner', {
-			templateUrl: '/partials/matchHistory.html',
-			controller: 'BasicCtrl1'
-		}).
-		when('/wards', {
-			templateUrl: '/partials/wards.html',
-			controller: 'BasicCtrl2'
-		}).
-		when('/match/:matchId', {
-			templateUrl: '/partials/match.html',
-			controller: 'BasicCtrl3'
-		}).
-		otherwise({
-			redirectTo: '/'
+var basic = angular.module('basic', ['ui.router', 'basicControllers']);
+basic.config(['$stateProvider','$urlRouterProvider',
+    function($stateProvider, $urlRouterProvider) {
+      $urlRouterProvider.otherwise('/');
+      $stateProvider
+        .state('matchHistory', {
+          url: '/matchHistory/:summoner',
+          templateUrl: 'partials/matchHistory.html',
+          controller: function($scope, $stateParams) {
+          	$scope.summoner = $stateParams.summoner;
+          }
+        })
+        .state('match', {
+			url:'/match/:matchId',
+			templateUrl:'/partials/match.html',
+			controller: function($scope, $stateParams) {
+				$scope.matchId = $stateParams.matchId;
+			}
+		})
+		.state('match.combat', {
+			url:'/combat',
+			templateUrl:'/partials/combat.html',
+			controller:'BasicCtrl3'
+		})
+		.state('match.spells', {
+			url:'/spells',
+			templateUrl:'/partials/spells.html',
+			controller:'BasicCtrl3'
+		})
+		.state('match.wards', {
+			url:'/wards',
+			templateUrl:'/partials/wards.html',
+			controller:'BasicCtrl3'
 		});
-}]);
+	 }
+]);
